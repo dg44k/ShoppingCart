@@ -1,0 +1,74 @@
+@import url("../css/reset.css");
+header {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.h-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo > a {
+  font-size: 3rem;
+  font-style: italic;
+  color: inherit;
+}
+
+.nav-list {
+  display: flex;
+  gap: 25px;
+}
+
+.link-item {
+  font-size: 1.8rem;
+  color: inherit;
+}
+
+.item-list .link-item::after {
+  content: "";
+  display: block;
+  margin: 1px auto;
+  width: 0;
+  height: 1.5px;
+  background-color: #000;
+  transition: width 0.5s ease-in-out;
+}
+
+.item-list:hover .link-item::after {
+  width: 110%;
+}
+
+.l-block {
+  display: flex;
+  gap: 30px;
+}
+
+.image-cart,
+.image-profile {
+  width: 30px;
+  height: 30px;
+}
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=base.css.map */

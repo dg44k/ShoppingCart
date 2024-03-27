@@ -1,5 +1,19 @@
-header {
-  width: 100%;
-  height: 50px;
-  background: aqua;
+@import '_header';
+@import url('../css/reset.css');
+
+* {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
 }
