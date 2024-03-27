@@ -1,5 +1,6 @@
-@import '_header';
 @import url('../css/reset.css');
+@import '_header';
+@import '_home';
 
 * {
 	font-family: 'Roboto Condensed', sans-serif;
@@ -11,6 +12,7 @@ html {
 
 .wrapper {
 	width: 100%;
+	height: auto;
 }
 
 .container {
