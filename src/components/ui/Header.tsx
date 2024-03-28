@@ -2,40 +2,41 @@ import React from 'react'
 import '../../assets/css/base.css'
 import ImageCart from '../../assets/img/cart.png'
 import ImageProfile from '../../assets/img/profile-user.png'
+import { Link } from 'react-router-dom'
 
 const Header: React.FC = () => {
 	return (
 		<header>
 			<div className='container h-container'>
 				<div className='logo'>
-					<a href='#'>Logo</a>
+					<Link to='/'>Logo</Link>
 				</div>
 
 				<nav className='navbar'>
 					<ul className='nav-list'>
 						<li className='item-list'>
-							<a href='#' className='link-item'>
+							<Link to='/' className='link-item'>
 								HOME
-							</a>
+							</Link>
 						</li>
 						<li className='item-list'>
-							<a href='#' className='link-item'>
+							<Link to='shop' className='link-item'>
 								SHOP
-							</a>
+							</Link>
 						</li>
 						<li className='item-list'>
-							<a href='#' className='link-item'>
+							<Link to='cart' className='link-item'>
 								CART
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>
 
 				<div className='l-block'>
 					<div className='cart'>
-						<a href='#'>
+						<Link to='cart'>
 							<img src={ImageCart} alt='cart' className='image-cart' />
-						</a>
+						</Link>
 					</div>
 					<div className='profile-user'>
 						<a href='#'>

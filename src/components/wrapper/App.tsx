@@ -1,13 +1,13 @@
-import Header from '../ui/Header';
-import Home from '../ui/Home';
+import Header from '../ui/Header'
+import  { Outlet } from 'react-router-dom';
 
 function App() {
 	return (
-    <div className='wrapper'>
-      <Header />
-      <Home />
-    </div>
-  );
+		<div className='wrapper'>
+			<Header />
+			<Outlet />
+		</div>
+	)
 }
 
 export default App
