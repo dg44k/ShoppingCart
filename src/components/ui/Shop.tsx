@@ -1,8 +1,21 @@
+import ListProduct from './ListProduct'
+
 const Shop: React.FC = () => {
+
+
+
 	return (
-		<>
-			'shop'
-		</>
+		<div className='wrapper-shop'>
+			<h1 className='intro-shop'>SHOP</h1>
+			<div className="container shop-container">
+				<div className="filters-shop">
+
+				</div>
+				<div className="content">
+					<ListProduct />
+				</div>
+			</div>
+		</div>
 	);
 }
 
