@@ -5,9 +5,7 @@ import CardProduct from './CardProduct'
 const ListProduct: React.FC = () => {
 	const [products, setProducts] = useState<ProductType[]>([])
 
-	useEffect(() => {
-		console.log(1);
-		
+	useEffect(() => {		
 		fetch('https://fakestoreapi.com/products')
 			.then(response => {
 				if (!response.ok) {
@@ -21,11 +19,11 @@ const ListProduct: React.FC = () => {
 	}, [])
 
 	return (
-		<>
+		<div className='cards-products'>
 			{products.map((product: ProductType) => (
 				<CardProduct key={product.id} {...product} />
 			))}
-		</>
+		</div>
 	)
 }
 

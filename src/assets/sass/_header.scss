@@ -26,16 +26,14 @@ header {
 	color: inherit;
 }
 
-.item-list {
-	.link-item::after {
-		content: '';
-		display: block;
-		margin: 1px auto;
-		width: 0;
-		height: 1.5px;
-		background-color: #000;
-		transition: width 0.5s ease-in-out;
-	}
+.link-item::after {
+	content: '';
+	display: block;
+	margin: 1px auto;
+	width: 0;
+	height: 1.5px;
+	background-color: #000;
+	transition: width 0.5s ease-in-out;
 }
 
 .item-list:hover {
@@ -55,4 +53,3 @@ header {
 	width: 30px;
 	height: 30px;
 }
-
