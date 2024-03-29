@@ -193,7 +193,7 @@ header {
   font-size: 1.8rem;
 }
 
-.intro-shop {
+.intro-page {
   text-align: center;
   padding: 40px;
   font-size: 4rem;
@@ -214,6 +214,14 @@ header {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 30px;
+}
+
+.intro-page {
+  text-align: center;
+  padding: 40px;
+  font-size: 4rem;
+  background-color: #f0f8ff;
+  margin-bottom: 50px;
 }
 
 * {

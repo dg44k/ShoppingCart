@@ -5,7 +5,7 @@ import CardProduct from './CardProduct'
 const ListProduct: React.FC = () => {
 	const [products, setProducts] = useState<ProductType[]>([])
 
-	useEffect(() => {		
+	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
 			.then(response => {
 				if (!response.ok) {
@@ -16,7 +16,7 @@ const ListProduct: React.FC = () => {
 			.then(res => {
 				setProducts(res)
 			})
-	}, [])
+	}, [setProducts])
 
 	return (
 		<div className='cards-products'>
