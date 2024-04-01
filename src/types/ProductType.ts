@@ -3,4 +3,12 @@ export type ProductType = {
 	title: string;
 	price: number;
 	image: string;
+	category: Categories;
+}
+
+export enum Categories {
+	MEN_CLOTHES = "men's clothing",
+	WOMEN_CLOTHES = "women's clothing",
+	ELECTRONICS = "electronics",
+	JEWELRY = "jewelery",
 }
