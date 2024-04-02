@@ -7,7 +7,7 @@ const Shop: React.FC = () => {
 	const [products, setProducts] = useState<ProductType[]>([])
 	const [filterProducts, setFilterProducts] = useState<ProductType[]>(products)
 	const [isLoader, setIsLoader] = useState<boolean>(true)
-
+	
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
 			.then(async response => {

@@ -1,11 +1,11 @@
-import ImageIconCart from '../../assets/img/icon-cart.png'
 import { ProductType } from '../../types/ProductType'
 
 const CardProduct: React.FC<ProductType> = (props: ProductType) => {
 	return (
 		<div className='card-product'>
-			<div className='card-product--show'>
-				<img src={ImageIconCart} alt='icon cart' />
+			<div className='card-product__icons--show'>
+				<button className='btn-icon-cart btn-icon'></button>
+				<button className='btn-icon-redirect btn-icon'></button>
 			</div>
 			<img src={props.image} alt='' className='card-product__pict' />
 			<div className='card-product__info'>

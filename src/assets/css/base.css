@@ -123,12 +123,31 @@ header {
   position: relative;
 }
 
-.card-product--show > img {
+.btn-icon {
+  background-image: url("../img/icon-cart.png");
+  background-color: #f0f8ff;
+  width: 32px;
+  height: 32px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-icon-cart {
+  background-image: url("../img/icon-cart.png");
+}
+
+.btn-icon-redirect {
+  background-image: url("../img/redirect.png");
+}
+
+.card-product__icons--show > .btn-icon {
   opacity: 0;
 }
 
-.card-product--show {
+.card-product__icons--show {
   display: flex;
+  gap: 15px;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -143,10 +162,10 @@ header {
   transition: 0.5s ease-in-out;
 }
 
-.card-product:hover .card-product--show {
+.card-product:hover .card-product__icons--show {
   height: 100%;
 }
-.card-product:hover .card-product--show > img {
+.card-product:hover .card-product__icons--show > .btn-icon {
   animation: slide-icon 0.5s forwards;
 }
 

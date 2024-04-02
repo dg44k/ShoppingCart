@@ -1,5 +1,6 @@
 $time-slide: 0.5s;
-
+$path_icon-cart: url('../img/icon-cart.png');
+$path_icon-redirect: url('../img/redirect.png');
 .card-product {
 	max-width: 250px;
 	height: max-content;
@@ -10,12 +11,31 @@ $time-slide: 0.5s;
 	position: relative;
 }
 
-.card-product--show > img {
+.btn-icon {
+	background-image: $path_icon-cart;
+	background-color: #f0f8ff;
+	width: 32px;
+	height: 32px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.btn-icon-cart {
+	background-image: $path_icon-cart;
+}
+
+.btn-icon-redirect {
+	background-image: $path_icon-redirect;
+}
+
+.card-product__icons--show > .btn-icon {
 	opacity: 0;
 }
 
-.card-product--show {
+.card-product__icons--show {
 	display: flex;
+	gap: 15px;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
@@ -33,10 +53,10 @@ $time-slide: 0.5s;
 }
 
 .card-product:hover {
-	.card-product--show {
+	.card-product__icons--show {
 		height: 100%;
 	}
-	.card-product--show > img {
+	.card-product__icons--show > .btn-icon {
 		animation: slide-icon $time-slide forwards;
 	}
 }
