@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { addProduct } from '../../state/cart/cartSlice'
 import { AppDispatch } from '../../state/store'
 import { ProductType } from '../../types/ProductType'
@@ -7,10 +6,7 @@ import { ProductType } from '../../types/ProductType'
 const CardProduct: React.FC<ProductType> = (props: ProductType) => {
 	const dispatch = useDispatch<AppDispatch>()
 	
-	const navigate = useNavigate()
-	const handleCardClick = props => {
-		navigate(`/shop/card/${props.id}`)
-	}
+
 
 	return (
 		<div className='card-product'>
@@ -19,7 +15,7 @@ const CardProduct: React.FC<ProductType> = (props: ProductType) => {
 					className='btn-icon-cart btn-icon'
 					onClick={() => dispatch(addProduct(props))}
 				></button>
-				<button className='link-icon-redirect btn-icon' onClick={() => handleCardClick(props)}></button>
+				<button className='link-icon-redirect btn-icon'></button>
 			</div>
 			<img src={props.image} alt='' className='card-product__pict' />
 			<div className='card-product__info'>
