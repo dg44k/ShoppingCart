@@ -1,0 +1,44 @@
+@import '_card-product';
+
+.intro-page {
+	text-align: center;
+	padding: 40px;
+	font-size: 4rem;
+	background-color: #f0f8ff;
+
+	margin-bottom: 50px;
+}
+
+.filters-shop {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 100px;
+}
+
+.btn-filter {
+	padding: 12px 20px;
+	background-color: #f0f8ff;
+	font-size: 1.8rem;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	cursor: pointer;
+
+	transition: .3s ease-in-out;
+}
+
+.btn-filter:hover {
+	transform: scale(1.1);
+}
+
+.content {
+	margin: 0 auto;
+}
+
+.list-products {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+	margin-bottom: 30px;
+}
