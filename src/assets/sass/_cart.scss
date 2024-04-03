@@ -51,7 +51,19 @@
 }
 
 .card__count-in_cart {
+	display: flex;
+	gap: 5px;
+	align-items: center;
 	font-size: 1.8rem;
+
+	&--plus,
+	&--minus {
+		padding: 5px 10px !important;
+	}
+
+	&--value {
+		font-size: inherit;
+	}
 }
 
 .card__price-in_cart {
@@ -62,21 +74,6 @@
 	display: flex;
 	gap: 30px;
 	justify-content: flex-end;
-}
-
-.btn-action {
-	border: 1px solid #000;
-	outline: none;
-	background: none;
-	padding: 10px 20px;
-	cursor: pointer;
-
-	transition: 0.3s ease-in-out;
-}
-
-.btn-action:hover {
-	background-color: #000;
-	color: #fff;
 }
 
 .amount-all_products {

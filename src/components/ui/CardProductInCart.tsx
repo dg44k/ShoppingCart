@@ -1,6 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { buyProduct, removeProduct } from '../../state/cart/cartSlice'
+import {
+	addProduct,
+	buyProduct,
+	removeProduct,
+} from '../../state/cart/cartSlice'
 import { AppDispatch } from '../../state/store'
 import { ProductType } from '../../types/ProductType'
 import ButtonCart from './ButtonCart'
@@ -22,7 +26,21 @@ const CardProductInCart: React.FC<ProductType> = (props: ProductType) => {
 			</div>
 			<div className='about-card'>
 				<p className='card__title-in_cart'>{props.title}</p>
-				<p className='card__count-in_cart'>Count: {props.count}</p>
+				<div className='card__count-in_cart'>
+					<ButtonCart
+						cl='card__count-in_cart--plus'
+						onClick={() => dispatch(addProduct(props))}
+					>
+						+
+					</ButtonCart>
+					<span className='card__count-in_cart--value'>{props.count}</span>
+					<ButtonCart
+						cl='card__count-in_cart--minus'
+						onClick={() => dispatch(removeProduct(props))}
+					>
+						-
+					</ButtonCart>
+				</div>
 				<p className='card__price-in_cart'>{props.price} $</p>
 				<div className='btn-action-flex'>
 					<ButtonCart
@@ -31,10 +49,7 @@ const CardProductInCart: React.FC<ProductType> = (props: ProductType) => {
 					>
 						Remove
 					</ButtonCart>
-					<ButtonCart
-						cl='btn-buy'
-						onClick={() => dispatch(buyProduct(props))}
-					>
+					<ButtonCart cl='btn-buy' onClick={() => dispatch(buyProduct(props))}>
 						Buy
 					</ButtonCart>
 				</div>

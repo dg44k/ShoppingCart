@@ -305,7 +305,16 @@ header {
 }
 
 .card__count-in_cart {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   font-size: 1.8rem;
+}
+.card__count-in_cart--plus, .card__count-in_cart--minus {
+  padding: 5px 10px !important;
+}
+.card__count-in_cart--value {
+  font-size: inherit;
 }
 
 .card__price-in_cart {
@@ -316,6 +325,14 @@ header {
   display: flex;
   gap: 30px;
   justify-content: flex-end;
+}
+
+.amount-all_products {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 0;
 }
 
 .btn-action {
@@ -330,14 +347,6 @@ header {
 .btn-action:hover {
   background-color: #000;
   color: #fff;
-}
-
-.amount-all_products {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 20px 0;
 }
 
 * {
