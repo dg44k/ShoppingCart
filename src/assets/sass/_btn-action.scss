@@ -1,0 +1,15 @@
+
+.btn-action {
+	border: 1px solid #000;
+	outline: none;
+	background: none;
+	padding: 10px 20px;
+	cursor: pointer;
+
+	transition: 0.3s ease-in-out;
+}
+
+.btn-action:hover {
+	background-color: #000;
+	color: #fff;
+}
