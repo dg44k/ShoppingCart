@@ -26,7 +26,7 @@ const cartSlice = createSlice({
 				state.products.push({ ...action.payload, count: 1 })
 			}
 
-			state.amount += action.payload.price
+			state.amount = +(state.amount + action.payload.price).toFixed(2)
 		},
 		removeProduct: (state, action: PayloadAction<ProductType>) => {
 			state.products = state.products
@@ -38,7 +38,7 @@ const cartSlice = createSlice({
 				})
 				.filter(product => product.count > 0)
 
-			state.amount -= action.payload.price
+			state.amount = +(state.amount - action.payload.price).toFixed(2)
 		},
 		clearProducts: state => {
 			state.products = []
@@ -56,7 +56,10 @@ const cartSlice = createSlice({
 			state.products = state.products.filter(
 				product => product.id !== action.payload.id
 			)
-			state.amount -= action.payload.count * action.payload.price;
+			state.amount = +(
+				state.amount -
+				action.payload.count * action.payload.price
+			).toFixed(2)
 		},
 	},
 })

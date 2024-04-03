@@ -26,7 +26,7 @@ const Router: React.FC = () => {
 					element: <Shop />,
 					children: [
 						{
-							path: 'cardId',
+							path: 'card/:id',
 							element: <InfoCardView />,
 						},
 					],
