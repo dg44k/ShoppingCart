@@ -137,7 +137,7 @@ header {
   background-image: url("../img/icon-cart.png");
 }
 
-.btn-icon-redirect {
+.link-icon-redirect {
   background-image: url("../img/redirect.png");
 }
 
@@ -302,6 +302,10 @@ header {
 
 .card__title-in_cart {
   font-size: 2rem;
+}
+
+.card__count-in_cart {
+  font-size: 1.8rem;
 }
 
 .card__price-in_cart {

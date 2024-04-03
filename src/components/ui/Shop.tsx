@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import getFilterProducts from '../../services/filter'
 import { Categories, ProductType } from '../../types/ProductType'
 import ListProduct from './ListProduct'
+import { useParams } from 'react-router-dom'
 
 const Shop: React.FC = () => {
 	const [products, setProducts] = useState<ProductType[]>([])
 	const [filterProducts, setFilterProducts] = useState<ProductType[]>(products)
 	const [isLoader, setIsLoader] = useState<boolean>(true)
+	const cardProduct = useParams();
 	
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')

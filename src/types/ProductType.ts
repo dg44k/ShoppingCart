@@ -3,14 +3,7 @@ export type ProductType = {
 	title: string;
 	price: number;
 	image: string;
-	category: Categories;
-}
-
-export type IProductsInCart = {
-	id: number;
-	title: string;
-	price: number;
-	image: string;
+	category?: Categories;
 	count: number;
 }
 

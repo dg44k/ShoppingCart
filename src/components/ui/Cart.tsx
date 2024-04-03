@@ -1,8 +1,9 @@
-import { useSelector } from 'react-redux'
-import { RootState } from '../../state/store'
-import { IProductsInCart } from '../../types/ProductType'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../../state/store'
+import { ProductType } from '../../types/ProductType'
 import ButtonCart from './ButtonCart'
 import CardProductInCart from './CardProductInCart'
+import { clearProducts, payCart } from '../../state/cart/cartSlice'
 
 
 const Cart: React.FC = () => {
@@ -12,13 +13,15 @@ const Cart: React.FC = () => {
 	const amountProductsInCart = useSelector(
 		(state: RootState) => state.cart.amount
 	)
+	const dispatch = useDispatch<AppDispatch>()
+
 
 	return (
 		<div className='wrapper-cart'>
 			<h1 className='intro-page intro-cart'>CART</h1>
 			<div className='container container-cart'>
 				<div className='selected-products'>
-					{listProductsInCart.map((card: IProductsInCart) => (
+					{listProductsInCart.map((card: ProductType) => (
 						<CardProductInCart
 							key={card.id}
 							title={card.title}
@@ -33,8 +36,8 @@ const Cart: React.FC = () => {
 					Amount: {amountProductsInCart} $
 				</div>
 				<div className='btn-action-flex'>
-					<ButtonCart cl='btn-clear'>Clear cart</ButtonCart>
-					<ButtonCart cl='btn-pay'>Pay for cart</ButtonCart>
+					<ButtonCart cl='btn-clear' onClick={() => dispatch(clearProducts())}>Clear cart</ButtonCart>
+					<ButtonCart cl='btn-pay' onClick={() => dispatch(payCart())}>Pay for cart</ButtonCart>
 				</div>
 			</div>
 		</div>

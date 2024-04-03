@@ -1,6 +1,7 @@
 $time-slide: 0.5s;
 $path_icon-cart: url('../img/icon-cart.png');
 $path_icon-redirect: url('../img/redirect.png');
+
 .card-product {
 	max-width: 250px;
 	height: max-content;
@@ -25,7 +26,7 @@ $path_icon-redirect: url('../img/redirect.png');
 	background-image: $path_icon-cart;
 }
 
-.btn-icon-redirect {
+.link-icon-redirect {
 	background-image: $path_icon-redirect;
 }
 

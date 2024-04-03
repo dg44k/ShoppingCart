@@ -16,6 +16,7 @@ const ListProduct: React.FC<ListProductProps> = ({ products }) => {
 					price={product.price}
 					category={product.category}
 					image={product.image}
+					count={product.count}
 				/>
 			))}
 		</div>

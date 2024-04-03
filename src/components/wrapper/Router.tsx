@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import App from './App'
-import Home from '../ui/Home'
 import Cart from '../ui/Cart'
-import Shop from '../ui/Shop'
 import ErrorPage from '../ui/ErrorPage'
+import Home from '../ui/Home'
+import Shop from '../ui/Shop'
+import App from './App'
+import InfoCardView from '../ui/InfoCardView'
 
 const Router: React.FC = () => {
 	const router = createBrowserRouter([
@@ -23,6 +24,12 @@ const Router: React.FC = () => {
 				{
 					path: '/shop',
 					element: <Shop />,
+					children: [
+						{
+							path: 'cardId',
+							element: <InfoCardView />,
+						},
+					],
 				},
 			],
 		},
