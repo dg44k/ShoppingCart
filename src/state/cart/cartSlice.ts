@@ -25,7 +25,7 @@ const cartSlice = createSlice({
 			} else {
 				state.products.push({ ...action.payload, count: 1 })
 			}
-
+			console.log(state.amount, action.payload.price)
 			state.amount = +(state.amount + action.payload.price).toFixed(2)
 		},
 		removeProduct: (state, action: PayloadAction<ProductType>) => {
@@ -52,14 +52,7 @@ const cartSlice = createSlice({
 			state.products = []
 			state.amount = 0
 		},
-		buyProduct: (state, action: PayloadAction<ProductType>) => {
-			state.products = state.products.filter(
-				product => product.id !== action.payload.id
-			)
-			state.amount = +(
-				state.amount -
-				action.payload.count * action.payload.price
-			).toFixed(2)
+		buyProduct: () => {
 			alert('Congratulations! With new purchases!')
 		},
 	},
