@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-// import { useParams } from 'react-router-dom'
-// import { ProductType } from '../../types/ProductType'
-// import ButtonCart from './ButtonCart'
-
-// type CardViewType = {
-// 	description: string
-// } & ProductType
-
-const InfoCardView: React.FC = () => {
-
-	return (
-		<div className='wrapper-card_view'>
-			{/* <div className='container container-card_view'>
-				<img src={props.image} className='card_view__image' alt='' />
-=======
 import {useDispatch, useSelector} from 'react-redux'
 import { useParams } from 'react-router-dom'
 import {AppDispatch, RootState} from '../../state/store'
@@ -35,7 +19,6 @@ const InfoCardView: React.FC = () => {
 		<div className='wrapper-card_view'>
 			<div className='container container-card_view'>
 				<img src={targetCard!.image} className='card_view__image' alt='' />
->>>>>>> develop
 				<div className='card_view__info'>
 					<p className='card_view__title'>{targetCard!.title}</p>
 					<p className='card_view__category'>Category: {targetCard!.category}</p>
