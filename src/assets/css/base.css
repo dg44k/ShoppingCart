@@ -349,6 +349,45 @@ header {
   color: #fff;
 }
 
+.wrapper-card_view {
+  margin-top: 50px;
+}
+
+.container-card_view {
+  display: flex;
+  gap: 50px;
+}
+
+.card_view__image {
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+}
+.card_view__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.card_view__title {
+  font-size: 2.5rem;
+}
+.card_view__category {
+  font-size: 1.8rem;
+}
+.card_view__description {
+  font-size: 1.5rem;
+}
+.card_view__price {
+  font-size: 1.8rem;
+}
+.card_view_btns-flex {
+  align-self: flex-end;
+  display: flex;
+  gap: 30px;
+  margin-top: auto;
+}
+
 * {
   font-family: "Roboto Condensed", sans-serif;
 }

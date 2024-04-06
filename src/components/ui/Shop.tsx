@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react'
-import getFilterProducts from '../../services/filter'
-import { Categories, ProductType } from '../../types/ProductType'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getFilterProducts, updateProducts } from '../../state/cards/cardsSlice'
+import { RootState } from "../../state/store.ts"
+import { Categories } from '../../types/ProductType'
 import ListProduct from './ListProduct'
 
 const Shop: React.FC = () => {
-	const [products, setProducts] = useState<ProductType[]>([])
-	const [filterProducts, setFilterProducts] = useState<ProductType[]>(products)
 	const [isLoader, setIsLoader] = useState<boolean>(true)
+	const dispatch = useDispatch();
+	const filterProducts = useSelector((state: RootState) => state.cards.filterProducts)
 
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products')
@@ -18,11 +20,10 @@ const Shop: React.FC = () => {
 				return await response.json()
 			})
 			.then(res => {
-				setProducts(res)
-				setFilterProducts(res)
 				setIsLoader(false)
+				dispatch(updateProducts(res))
 			})
-	}, [])
+	}, [dispatch])
 
 	return (
 		<div className='wrapper-shop'>
@@ -32,9 +33,7 @@ const Shop: React.FC = () => {
 					<button
 						className='btn-filter filter-clothes'
 						onClick={() =>
-							setFilterProducts(() =>
-								getFilterProducts(products, Categories.MEN_CLOTHES)
-							)
+							dispatch(getFilterProducts(Categories.MEN_CLOTHES))
 						}
 					>
 						Men's clothes
@@ -42,9 +41,7 @@ const Shop: React.FC = () => {
 					<button
 						className='btn-filter filter-clothes'
 						onClick={() =>
-							setFilterProducts(() =>
-								getFilterProducts(products, Categories.WOMEN_CLOTHES)
-							)
+							dispatch(getFilterProducts(Categories.WOMEN_CLOTHES))
 						}
 					>
 						Women's clothes
@@ -52,9 +49,7 @@ const Shop: React.FC = () => {
 					<button
 						className='btn-filter filter-jewelry'
 						onClick={() =>
-							setFilterProducts(() =>
-								getFilterProducts(products, Categories.JEWELRY)
-							)
+							dispatch(getFilterProducts(Categories.JEWELRY))
 						}
 					>
 						Jewelry
@@ -62,9 +57,7 @@ const Shop: React.FC = () => {
 					<button
 						className='btn-filter filter-technics'
 						onClick={() =>
-							setFilterProducts(() =>
-								getFilterProducts(products, Categories.ELECTRONICS)
-							)
+							dispatch(getFilterProducts(Categories.ELECTRONICS))
 						}
 					>
 						Technics
