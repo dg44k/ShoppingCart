@@ -49,7 +49,7 @@ const CardProductInCart: React.FC<ProductType> = (props: ProductType) => {
 					>
 						Remove
 					</ButtonCart>
-					<ButtonCart cl='btn-buy' onClick={() => dispatch(buyProduct(props))}>
+					<ButtonCart cl='btn-buy' onClick={() => dispatch(buyProduct())}>
 						Buy
 					</ButtonCart>
 				</div>
