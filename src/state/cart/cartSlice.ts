@@ -60,6 +60,7 @@ const cartSlice = createSlice({
 				state.amount -
 				action.payload.count * action.payload.price
 			).toFixed(2)
+			alert('Congratulations! With new purchases!')
 		},
 	},
 })
