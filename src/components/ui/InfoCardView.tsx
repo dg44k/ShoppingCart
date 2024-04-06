@@ -10,8 +10,7 @@ const InfoCardView: React.FC = () => {
 	const products: ProductType[] = useSelector(
 		(state: RootState) => state.cards.products
 	)
-	// @ts-ignore
-	const targetCard: ProductType | undefined = products.find(pr => pr.id === +id)
+	const targetCard: ProductType | undefined = products.find(pr => pr.id === +id!)
 
 	const dispatch = useDispatch<AppDispatch>();
 
@@ -25,7 +24,7 @@ const InfoCardView: React.FC = () => {
 					<p className='card_view__description'>{targetCard!.description}</p>
 					<p className='card_view__price'>{targetCard!.price} $</p>
 					<div className='card_view_btns-flex'>
-						<ButtonCart cl='card_view_btn' onClick={() => dispatch(addProduct(targetCard))}>Add in cart</ButtonCart>
+						<ButtonCart cl='card_view_btn' onClick={() => dispatch(addProduct(targetCard!))}>Add in cart</ButtonCart>
 						<ButtonCart cl='card_view_btn' onClick={() => {dispatch(buyProduct())}}>Buy</ButtonCart>
 					</div>
 				</div>
